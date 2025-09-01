@@ -7,23 +7,12 @@ authors = [
 ]
 requires-python = ">=3.12"
 dependencies = [
-    "fpdf2>=2.8.4",
-    "google-cloud-texttospeech>=2.27.0",
-    "google-generativeai>=0.8.5",
-    "gtts>=2.5.4",
-    "ipywidgets>=8.1.7",
-    "jupyter>=1.1.1",
-    "matplotlib>=3.10.6",
     "openai>=1.102.0",
-    "pillow>=11.3.0",
-    "psutil>=7.0.0",
     "python-dotenv>=1.1.1",
-    "pyttsx3>=2.99",
-    "reportlab>=4.4.3",
-    "seaborn>=0.13.2",
     "streamlit>=1.49.1",
-    "streamlit-audiorecorder>=0.0.6",
-    "streamlit-drawable-canvas>=0.9.3",
+    "gtts>=2.3.0",
+    "streamlit-drawable-canvas>=0.9.0",
+    "Pillow>=10.0.0",
 ]
 
 [project.optional-dependencies]
@@ -46,4 +35,4 @@ dev = [
 ]
 
 [project.scripts]
-ainia-adventure = "src.app:main"
+ainia-adventure = "ainia.apps.app:main"

@@ -5,9 +5,9 @@ import hashlib
 import time
 import json
 from openai import OpenAI
-from learning_integrator import LearningIntegrator
-from prompt_builder import PromptBuilder
-from safety_validator import SafetyValidator
+from .learning_integrator import LearningIntegrator
+from .prompt_builder import PromptBuilder
+from ..utils.safety_validator import SafetyValidator
 
 
 class StoryGenerator:

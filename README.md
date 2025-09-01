@@ -1,11 +1,11 @@
 # 🏰 Ainia Adventure Learning Stories
 
-**AI-powered educational storytelling for children aged 5-9**
+## AI-powered educational storytelling for children aged 5-9
 
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit](https://img.shields.io/badge/streamlit-1.28+-red.svg)](https://streamlit.io/)
-[![OpenAI GPT-4o](https://img.shields.io/badge/OpenAI-GPT--4o-green.svg)](https://openai.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit](https://img.shields.io/badge/streamlit-1.49+-red.svg)](https://streamlit.io/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-API-green.svg)](https://openai.com/)
+[![uv](https://img.shields.io/badge/uv-package_manager-purple.svg)](https://github.com/astral-sh/uv)
 
 > *Making learning magical, one story at a time* ✨
 
@@ -13,16 +13,18 @@
 
 ## 🎯 Overview
 
-Ainia Adventure Learning Stories is an innovative AI-powered platform that creates personalized adventure stories with embedded learning elements for children. Each story is uniquely generated based on the child's preferences while seamlessly integrating educational challenges in math, vocabulary, and problem-solving.
+Ainia Adventure Learning Stories is an innovative AI-powered platform that creates personalized, multi-part adventure stories with embedded learning challenges for children. Each story adapts in real-time to your child's responses, featuring an intelligent difficulty system that grows with their abilities.
 
 ### ✨ Key Features
 
 - **🎭 Three Magical Themes**: Dragons, Pirates, and Princesses
-- **📚 Learning Integration**: Math, vocabulary, and problem-solving challenges
+- **📚 Adaptive Learning**: Multi-question stories with difficulty adjustment based on performance
+- **🎨 Creative Expression**: Interactive drawing canvas for children to illustrate their adventures
+- **🎵 Audio Narration**: Text-to-speech functionality for immersive storytelling
 - **🛡️ Safety First**: Comprehensive content validation and age-appropriate content
 - **🎉 Child-Friendly Interface**: Colorful, engaging UI with celebrations and animations
-- **👨‍👩‍👧‍👦 Parent Transparency**: Clear explanations of AI educational choices
-- **⚡ High Performance**: Optimized with caching and scalable architecture
+- **👨‍👩‍👧‍👦 Parent Transparency**: Detailed progress tracking and educational insights
+- **🧠 Smart Difficulty**: AI-powered adaptive system adjusts challenge level in real-time
 
 ---
 
@@ -30,18 +32,20 @@ Ainia Adventure Learning Stories is an innovative AI-powered platform that creat
 
 ### Prerequisites
 
-- Python 3.11 or higher
+- Python 3.12 or higher
 - OpenAI API key ([Get one here](https://platform.openai.com/api-keys))
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Jai-Dhiman/Ainia-Prototype.git
    cd Ania-Prototype
    ```
 
 2. **Install dependencies with uv** (recommended)
+
    ```bash
    # Install uv if you haven't already
    curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -51,51 +55,51 @@ Ainia Adventure Learning Stories is an innovative AI-powered platform that creat
    ```
 
    *Alternative with pip:*
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env
    ```
-   
+
    Edit `.env` and add your OpenAI API key:
+
    ```
    OPENAI_API_KEY=your_api_key_here
    ```
 
 4. **Run the application**
+
    ```bash
    uv run streamlit run main.py
    ```
-   
+
    *Or with pip:*
+
    ```bash
    streamlit run main.py
    ```
 
 5. **Open your browser**
-   
+
    Navigate to `http://localhost:8501` to experience the magic! 🎭
 
 ---
 
-## 📖 Interactive Demo
+## 📖 How It Works
 
-For a comprehensive walkthrough of the application, check out our **Interactive Jupyter Notebook Demo**:
+**Ainia** creates personalized, multi-part adventure stories that adapt to your child's learning level:
 
-```bash
-# Launch Jupyter notebook
-uv run jupyter notebook Ainia_Adventure_Stories_Demo.ipynb
-```
-
-The demo includes:
-- Complete user journey walkthrough
-- Technical architecture insights
-- Performance metrics visualization
-- Educational impact analysis
-- Interactive story generation
+1. **Choose Your Adventure**: Select from Dragons, Pirates, or Princesses themes
+2. **Personalized Story**: Enter your child's name and learning focus
+3. **Interactive Journey**: Read 3-part stories with learning challenges embedded naturally
+4. **Adaptive Learning**: Questions adjust difficulty based on your child's responses
+5. **Creative Expression**: Draw scenes from your completed adventure
+6. **Audio Experience**: Listen to stories with text-to-speech narration
 
 ---
 
@@ -103,65 +107,58 @@ The demo includes:
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Streamlit     │    │     Python      │    │     GPT-4o      │
-│   Frontend      │───▶│     Backend     │───▶│   API Service   │
+│   Streamlit     │    │     Python      │    │   OpenAI API    │
+│   Frontend      │───▶│     Backend     │───▶│   Service       │
 │                 │    │                 │    │                 │
-│ • Theme Select  │    │ • Story Gen     │    │ • AI Generation │
-│ • Child Input   │    │ • Safety Check  │    │ • Smart Prompts │
-│ • Learning UI   │    │ • Learning Mix  │    │ • Content Safe  │
-│ • Celebrations  │    │ • Caching       │    │                 │
+│ • Theme Select  │    │ • Multi-Q Gen   │    │ • Story Parts   │
+│ • Child Input   │    │ • Adaptive Sys  │    │ • Questions     │
+│ • Drawing UI    │    │ • Safety Check  │    │ • Explanations  │
+│ • Audio Player  │    │ • Progress Trk  │    │ • Content Safe  │
+│ • Celebrations  │    │ • TTS Manager   │    │                 │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
 ### Core Components
 
-- **`StoryGenerator`**: Orchestrates GPT-4o API calls with intelligent caching
-- **`LearningIntegrator`**: Embeds educational elements naturally into stories
+- **`MultiQuestionStoryGenerator`**: Orchestrates multi-part story generation with adaptive difficulty
+- **`AdaptiveDifficultyManager`**: Adjusts question difficulty based on child's performance
+- **`StorySession`**: Manages story state, progress, and question results
+- **`TextToSpeechManager`**: Provides audio narration using Google TTS
+- **`DrawingCanvas`**: Interactive canvas for children to create artwork
 - **`SafetyValidator`**: Ensures all content meets child safety standards
-- **`PromptBuilder`**: Constructs optimized prompts for consistent AI generation
 
 ---
 
-## 👶 Demo Personas
+## 🎯 Learning Focuses
 
-Meet our three demo personas that showcase the application's adaptability:
+Choose from three learning areas that seamlessly integrate into your adventure:
 
-| Persona | Age | Theme | Learning Focus | Description |
-|---------|-----|-------|----------------|-------------|
-| **Emma** 🐉 | 5 | Dragons | Math (Counting/Addition) | Curious beginner who loves magical creatures |
-| **Alex** 🏴‍☠️ | 7 | Pirates | Vocabulary | Adventurous intermediate learner who dreams of sailing |
-| **Sophia** 👑 | 9 | Princesses | Problem Solving | Thoughtful advanced learner who enjoys complex stories |
+| Learning Focus | Age Range | Skills Developed | Example Challenges |
+|----------------|-----------|------------------|-------------------|
+| **🔢 Counting & Addition** | 5-7 years | Basic math skills, number recognition | "Count the dragon eggs in the nest!" |
+| **📚 Vocabulary** | 6-8 years | Word recognition, language expansion | "What word describes the pirate's brave action?" |
+| **🧩 Problem Solving** | 7-9 years | Critical thinking, logical reasoning | "How should the princess solve this kingdom puzzle?" |
 
 ---
 
-## 🧪 Testing & Quality
+## 🧠 Adaptive Difficulty System
 
-Our comprehensive testing suite ensures production-ready quality:
+**Ainia** features an intelligent difficulty adjustment system that grows with your child:
 
-### Test Results
-- **✅ 100% Test Success Rate** (27/27 combinations)
-- **✅ 50 Concurrent Sessions** handled with perfect stability
-- **✅ 94% Average Content Quality** score across all personas
-- **✅ <1ms Response Time** for core operations
+### How It Works
 
-### Run Tests
+- **📈 Smart Progression**: Questions automatically adjust based on previous answers
+- **✅ Correct Answer**: Next question becomes slightly more challenging to encourage growth
+- **❌ Incorrect Answer**: Next question becomes easier to build confidence and understanding
+- **🎯 Perfect Balance**: System finds the optimal challenge level for each child
 
-```bash
-# Comprehensive testing
-uv run python tests/test_comprehensive.py
+### Difficulty Levels
 
-# Performance benchmarking
-uv run python tests/performance_test.py
-
-# Stress testing
-uv run python stress_test.py
-
-# Content quality validation
-uv run python content_validator.py
-
-# Final optimization checks
-uv run python final_optimizer.py
-```
+| Level | Indicator | Description | Example (Dragons Theme) |
+|-------|-----------|-------------|-------------------------|
+| 🟢 **Easy** | Green dot | Foundation building | "Count 1-5 dragon eggs" |
+| 🟡 **Medium** | Yellow dot | Skill development | "Add 3 + 2 dragon treasures" |
+| 🔴 **Hard** | Red dot | Advanced challenge | "Solve the dragon's riddle: 7 + 6" |
 
 ---
 
@@ -169,23 +166,28 @@ uv run python final_optimizer.py
 
 ```
 Ainia-Prototype/
-├── 📁 src/                          # Core application code
-│   ├── app.py                       # Main Streamlit application
-│   ├── story_generator.py           # AI story generation with caching
-│   ├── learning_integrator.py       # Educational content integration
-│   ├── safety_validator.py          # Content safety validation
-│   └── prompt_builder.py            # AI prompt construction
-├── 📁 tests/                        # Comprehensive test suite
-│   ├── test_comprehensive.py        # Theme & learning combinations
-│   └── performance_test.py          # Performance benchmarking
-├── 📁 docs/                         # Documentation
-│   ├── PLAN.md                      # 5-day development plan
-│   └── TASKS.md                     # Task tracking and progress
-├── demo_personas.py                 # Child persona management
-├── stress_test.py                   # Concurrent session testing
-├── content_validator.py             # Educational quality validation
-├── final_optimizer.py               # Final optimizations
-├── Ainia_Adventure_Stories_Demo.ipynb # Interactive demo notebook
+├── 📁 src/ainia/                    # Core application package
+│   ├── 📁 apps/
+│   │   └── app.py                   # Main Streamlit application
+│   ├── 📁 core/                     # Core business logic
+│   │   ├── multi_question_system.py # Multi-part story generation
+│   │   ├── story_generator.py       # Base story generation
+│   │   ├── adaptive_system.py       # Adaptive difficulty management
+│   │   ├── learning_integrator.py   # Educational content integration
+│   │   ├── emotion_branching.py     # Emotional response handling
+│   │   └── prompt_builder.py        # AI prompt construction
+│   ├── 📁 utils/                    # Utility modules
+│   │   ├── safety_validator.py      # Content safety validation
+│   │   └── progress_reporter.py     # Progress tracking
+│   └── 📁 config/                   # Configuration files
+├── 📁 examples/                     # Example stories and demos
+├── 📁 notebooks/                    # Jupyter notebooks for analysis
+├── 📁 scripts/                      # Utility scripts
+├── 📁 tests/                        # Test suites
+│   ├── 📁 unit/                     # Unit tests
+│   ├── 📁 integration/              # Integration tests
+│   └── 📁 performance/              # Performance tests
+├── 📁 saved_artwork/                # Children's drawings (auto-created)
 ├── main.py                          # Application entry point
 ├── pyproject.toml                   # uv dependency configuration
 ├── .env.example                     # Environment variables template
@@ -197,12 +199,14 @@ Ainia-Prototype/
 ## 🛡️ Safety & Privacy
 
 ### Content Safety
+
 - **Age-appropriate validation** for 5-9 year olds
 - **Zero tolerance** for scary, violent, or inappropriate content
 - **Positive messaging** with growth mindset encouragement
 - **Inclusive representation** across all stories
 
 ### Privacy Protection
+
 - **No personal data storage** beyond session state
 - **API key security** with environment variable protection
 - **Cache privacy** - child names excluded from cache keys
@@ -210,25 +214,30 @@ Ainia-Prototype/
 
 ---
 
-## 🚀 Performance Optimizations
+## 🎨 Creative Features
 
-### Caching System
-- **Intelligent API caching** with 1-hour expiry
-- **Dynamic personalization** of cached stories
-- **Memory-efficient** cache management
-- **Privacy-preserving** cache keys
+### Interactive Drawing Canvas
 
-### Response Times
-- **Prompt Generation**: <0.01ms (Target: <50ms) ✅
-- **Safety Validation**: <0.56ms (Target: <100ms) ✅  
-- **Learning Integration**: <0.07ms (Target: <200ms) ✅
-- **Overall Assessment**: **EXCELLENT** - Ready for production
+After completing your adventure, children can:
+
+- **🖼️ Draw Their Favorite Scene**: Illustrate memorable moments from their story
+- **🎨 Free-Form Creation**: Use digital brushes and colors to express creativity
+- **💾 Save Artwork**: Automatically saves drawings with child's name and adventure theme
+- **🌟 Celebrate Achievement**: Artwork becomes a lasting memento of their learning journey
+
+### Text-to-Speech Narration
+
+- **🎵 Listen Mode**: Every story part can be read aloud with natural-sounding voices
+- **🔊 On-Demand Audio**: Click to hear individual story sections
+- **👂 Accessibility**: Supports different learning styles and reading abilities
+- **🎭 Immersive Experience**: Makes stories come alive through audio narration
 
 ---
 
 ## 🎓 Educational Impact
 
 ### Learning Philosophy
+
 Our "invisible learning" approach ensures educational content feels like a natural part of the adventure:
 
 - **Contextual Embedding**: Math problems emerge from story events
@@ -237,34 +246,59 @@ Our "invisible learning" approach ensures educational content feels like a natur
 - **Parent Insights**: Transparent explanations of educational choices
 
 ### Learning Objectives
+
 - **Math**: Counting, simple addition within age-appropriate ranges
 - **Vocabulary**: Context-rich word learning with age-appropriate terms
 - **Problem Solving**: Creative thinking and logical reasoning challenges
 
 ---
 
-## 📈 Future Roadmap
+## 🔧 Development & Testing
 
-| Feature | Timeline | Impact |
-|---------|----------|--------|
-| 📱 **Mobile App** | Q1 2025 | Flutter-based app with offline capabilities |
-| 🎨 **Visual Stories** | Q2 2025 | DALL-E integration for story illustrations |
-| 🧠 **Adaptive Learning** | Q2 2025 | ML-powered difficulty adjustment |
-| 👥 **Multi-User Support** | Q3 2025 | Family accounts with progress tracking |
-| 🌍 **Localization** | Q4 2025 | Multiple languages and cultural themes |
-| 🤝 **Curriculum Integration** | 2026 | School learning standards alignment |
+### Running Tests
+
+```bash
+# Run all tests
+uv run pytest tests/
+
+# Run specific test categories
+uv run pytest tests/unit/          # Unit tests
+uv run pytest tests/integration/   # Integration tests
+uv run pytest tests/performance/   # Performance tests
+
+# Run with enhanced features test
+uv run python test_enhanced_features.py
+```
+
+### Development Setup
+
+```bash
+# Install development dependencies
+uv add --dev pytest black ruff
+
+# Format code
+uv run black src/
+
+# Lint code
+uv run ruff check src/
+```
 
 ---
 
-## 📊 MVP Success Metrics
+## 👨‍👩‍👧‍👦 For Parents
 
-| Metric | Target | Achieved | Status |
-|--------|--------|----------|--------|
-| Test Success Rate | 95% | **100%** | ✅ Exceeded |
-| Concurrent Sessions | 20 | **50** | ✅ Exceeded |
-| Content Quality | 80% | **94%** | ✅ Exceeded |
-| Performance (Core Ops) | <100ms | **<1ms** | ✅ Exceeded |
-| Safety Validation | 100% | **100%** | ✅ Met |
+### Progress Tracking
+
+- **📊 Detailed Results**: View question-by-question performance after each story
+- **🎯 Difficulty Insights**: Understand how the adaptive system adjusts for your child
+- **📈 Learning Journey**: Track progression across multiple story sessions
+- **🧠 Educational Rationale**: See explanations for each learning challenge
+
+### Safety Features
+
+- **🛡️ Content Validation**: All stories are automatically screened for age-appropriateness
+- **🔒 Privacy Protection**: No personal data is stored beyond the current session
+- **👀 Transparency**: Full visibility into AI decision-making and educational choices
 
 ---
 
@@ -274,7 +308,7 @@ Our "invisible learning" approach ensures educational content feels like a natur
 uv run streamlit run main.py
 ```
 
-*Visit http://localhost:8501 and watch the magic happen!* ✨
+*Visit <http://localhost:8501> and watch the magic happen!* ✨
 
 ---
 

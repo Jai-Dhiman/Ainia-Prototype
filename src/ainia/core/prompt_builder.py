@@ -1,6 +1,6 @@
 """Prompt building for different learning types."""
 
-from learning_integrator import LearningIntegrator
+from .learning_integrator import LearningIntegrator
 
 
 class PromptBuilder:
